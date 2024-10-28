@@ -149,7 +149,7 @@ class OpenshiftClusterManager:
                 versions = execute_command(version_cmd)
                 if versions is not None:
                     # debug versions as this is failing
-                    log.info(f"Versions before failure: {versions}")
+                    log.info(f"Versions length before failure: {len(versions)} and its type is: {type(versions)}")
                     version = [ver for ver in versions.split("\n") if ver][-1]
                 self.openshift_version = version
             else:
