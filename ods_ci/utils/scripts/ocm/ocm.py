@@ -51,7 +51,7 @@ class OpenshiftClusterManager:
         self.ocm_verbose_level = args.get("ocm_verbose_level", "0")
         self.num_users_to_create_per_group = args.get("num_users_to_create_per_group")
         self.htpasswd_cluster_admin = args.get("htpasswd_cluster_admin")
-        self.htpasswd_cluster_password = args.get("htpasswd_cluster_password")
+        self.htpasswd_cluster_password = self.cluster_id # args.get("htpasswd_cluster_password")
         self.ldap_url = args.get("ldap_url")
         self.ldap_bind_dn = args.get("ldap_bind_dn")
         self.ldap_bind_password = args.get("ldap_bind_password")
