@@ -394,7 +394,7 @@ Verify DSC Contains Correct Component Versions  # robocop: disable:too-long-test
     ...       RHOAIENG-12693
     ...       ExcludeOnODH
     Gather Release Attributes From DSC And DSCI
-    ${rhods_operator_branch} =  Remove String Using Regexp  ${DSC_RELEASE_VERSION}  \\.[0-9]+\$
+    ${rhods_operator_branch} =  Replace String Using Regexp  ${DSC_RELEASE_VERSION}  ^([0-9]+\\.[0-9]+).*  \\1
     Common.Clone Git Repository  ${RHODS_OPERATOR_GIT_REPO}  rhoai-${rhods_operator_branch}  ${RHODS_OPERATOR_GIT_DIR}
     ${component_versions} =  Run
     ...    oc get dsc default-dsc -o json | jq '.status.components'
